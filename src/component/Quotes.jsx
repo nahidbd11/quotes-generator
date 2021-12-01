@@ -1,11 +1,11 @@
 const Quotes = ({ handleClick, quoteText, author }) => {
   return (
-    <div className="contaier">
-      <p className="text-muted">{quoteText}</p>
+    <div className="quotes-container">
       <cite>
-        <blockquote> {author}</blockquote>
-      </cite>{" "}
-      <button className="btn btn-primary" onClick={handleClick}>
+        <blockquote className="mt-2"> {quoteText}</blockquote>
+      </cite>
+      <p className="text-muted mt-2">---------{author}</p>
+      <button className="btn btn-primary mt-1" onClick={handleClick}>
         Generate Quotes
       </button>
     </div>

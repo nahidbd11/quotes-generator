@@ -28,6 +28,7 @@ function App() {
   }
   return (
     <div className="App-container">
+      {/* TODO:glassmorphism on app-container */}
       <Quotes
         quoteText={state.quoteText}
         author={state.author}
