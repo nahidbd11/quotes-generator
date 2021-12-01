@@ -3,7 +3,7 @@
 function App() {
   return (
     <div className="primary">
-      <h4>quotes Generator project</h4>
+      <h4>quotes Generator project nahid</h4>
     </div>
   );
 }
