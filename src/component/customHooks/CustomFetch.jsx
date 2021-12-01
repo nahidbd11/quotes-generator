@@ -10,7 +10,7 @@ const useFetch = (url, count) => {
       .then((quote) => {
         setData(quote);
       });
-  }, [count]);
+  }, [count, url]);
   console.log(data, "from custom hook");
   return data;
 };

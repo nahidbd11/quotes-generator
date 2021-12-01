@@ -1,6 +1,6 @@
 import "./App.scss";
 import Quotes from "./component/Quotes";
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import useFetch from "./component/customHooks/CustomFetch";
 import reducer from "./reducer";
 function App() {
