@@ -2,7 +2,14 @@
   --primary: blue;
   --light: white;
 }
-
+.App-container {
+  display: grid;
+  grid-template-columns: 50vh;
+  grid-template-rows: 50vw;
+  place-content: center center;
+  place-items: center center;
+  background-color: violet;
+}
 .btn {
   border: none;
   outline: none;

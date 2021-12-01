@@ -1,6 +1,12 @@
 $primary: blue;
 $text-light: rgb(240, 240, 240);
-
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .primary {
   background-color: $primary;
   color: $text-light;
