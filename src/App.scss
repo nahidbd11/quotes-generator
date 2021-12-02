@@ -48,3 +48,56 @@ $margins: 1, 2, 3;
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+// HACK:Animating loading
+.loading {
+  font-size: 45px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  span {
+    display: inline-block;
+    margin: 0 -0.05em;
+  }
+}
+.loading08 {
+  span {
+    position: relative;
+    color: rgba(#000, 0.2);
+    animation: loading08-parent 2s infinite;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: attr(data-text);
+      color: #fff;
+      opacity: 0;
+      animation: loading08-child 2s infinite;
+    }
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i + 1})::after {
+        animation-delay: #{$i * 0.2}s;
+      }
+    }
+  }
+}
+@keyframes loading08-parent {
+  0%,
+  35%,
+  100% {
+    color: rgba(#000, 0.2);
+  }
+  60%,
+  80% {
+    color: #fff;
+  }
+}
+@keyframes loading08-child {
+  0% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
