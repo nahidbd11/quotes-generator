@@ -15,7 +15,6 @@ function App() {
   const quote = useFetch("https://api.quotable.io/random", state.count);
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("working timer function");
       dispatch({ type: "LOAD_CHANGE" });
     }, 2000);
     return () => {
