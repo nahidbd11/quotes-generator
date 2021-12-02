@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useEffect,useState } from "react";
+
 
 const useFetch = (url, count) => {
   const [data, setData] = useState(null);

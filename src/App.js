@@ -1,9 +1,9 @@
 import "./App.scss";
 import Quotes from "./component/Quotes";
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import useFetch from "./component/customHooks/CustomFetch";
 import reducer from "./reducer";
-import { useEffect } from "react";
+
 function App() {
   const initialstate = {
     quoteText: "When you get tired,learn to rest not quit",
