@@ -13,6 +13,7 @@ function App() {
   };
   const [state, dispatch] = useReducer(reducer, initialstate);
   const quote = useFetch("https://api.quotable.io/random", state.count);
+  console.log(quote);
   useEffect(() => {
     const timer = setTimeout(() => {
       dispatch({ type: "LOAD_CHANGE" });
@@ -40,7 +41,6 @@ function App() {
             <span>N</span>
             <span>G</span>
           </div>
-         
         </h3>
       )}
       {!state.isloading && (
