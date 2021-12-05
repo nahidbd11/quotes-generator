@@ -1,6 +1,6 @@
 import "./App.scss";
 import Quotes from "./component/Quotes";
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useRef } from "react";
 import useFetch from "./component/customHooks/CustomFetch";
 import reducer from "./reducer";
 
@@ -12,11 +12,13 @@ function App() {
     isloading: true,
   };
   const [state, dispatch] = useReducer(reducer, initialstate);
+  const animRef = useRef(null);
   const quote = useFetch("https://api.quotable.io/random", state.count);
   console.log(quote);
   useEffect(() => {
     const timer = setTimeout(() => {
       dispatch({ type: "LOAD_CHANGE" });
+      animRef.current.slideDown();
     }, 2000);
     return () => {
       clearTimeout(timer);
@@ -25,7 +27,8 @@ function App() {
   function handleClick() {
     dispatch({ type: "INCREAMENT" });
     dispatch({ type: "SET_QUOTES", payload: quote });
-    dispatch({ type: "LOAD_CHANGE" });
+    // dispatch({ type: "LOAD_CHANGE" });
+    // animRef.current.hide();
   }
   return (
     <div className="App-container">
@@ -45,6 +48,7 @@ function App() {
       )}
       {!state.isloading && (
         <Quotes
+          ref={animRef}
           quoteText={state.quoteText}
           author={state.author}
           handleClick={handleClick}

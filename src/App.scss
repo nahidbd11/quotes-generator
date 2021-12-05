@@ -10,7 +10,7 @@
   grid-template-rows: 100vh;
   place-content: center center;
   place-items: center center;
-  background-color: rgb(231, 110, 231);
+  background-color: rgb(153, 132, 153);
 }
 .btn {
   border: none;
@@ -40,6 +40,8 @@ $margins: 1, 2, 3;
 
 .quotes-container {
   padding: 2em;
+  display: flex;
+  flex-flow: column nowrap;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
@@ -47,6 +49,7 @@ $margins: 1, 2, 3;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  // transition: all 10s linear 3s;
 }
 
 // HACK:Animating loading
@@ -106,5 +109,26 @@ $margins: 1, 2, 3;
   .quotes-container {
     max-width: 90%;
     min-height: 60%;
+  }
+}
+// .quote-div {
+//   // margin-top: -202px;
+//   // opacity: 0;
+//   // overflow: hidden;
+// }
+.hide {
+  margin-top: 5px;
+  opacity: 1;
+  // transition: all 3s ease;
+  animation: animatequote 3s ease;
+}
+@keyframes animatequote {
+  from {
+    margin-top: -202px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 5px;
+    opacity: 1;
   }
 }
