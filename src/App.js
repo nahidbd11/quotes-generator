@@ -20,6 +20,7 @@ function App() {
       dispatch({ type: "LOAD_CHANGE" });
       animRef.current.slideDown();
     }, 2000);
+
     return () => {
       clearTimeout(timer);
     };
@@ -27,7 +28,8 @@ function App() {
   function handleClick() {
     dispatch({ type: "INCREAMENT" });
     dispatch({ type: "SET_QUOTES", payload: quote });
-    // dispatch({ type: "LOAD_CHANGE" });
+    // animRef.current.slideDown();
+    dispatch({ type: "LOAD_CHANGE" });
     // animRef.current.hide();
   }
   return (
