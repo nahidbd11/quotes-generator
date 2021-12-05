@@ -18,8 +18,8 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       dispatch({ type: "LOAD_CHANGE" });
-      animRef.current.slideDown();
-    }, 2000);
+      // animRef.current.slideDown(); //HACK:using conditional classname to quotes component so i turn it off
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
@@ -52,6 +52,7 @@ function App() {
           quoteText={state.quoteText}
           author={state.author}
           handleClick={handleClick}
+          isloading={state.isloading}
         />
       )}
     </div>

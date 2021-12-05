@@ -67,7 +67,7 @@ $margins: 1, 2, 3;
   span {
     position: relative;
     color: rgba(#000, 0.2);
-    animation: loading08-parent 2s infinite;
+    animation: loading08-parent 1s infinite;
     &::after {
       position: absolute;
       top: 0;
@@ -75,7 +75,7 @@ $margins: 1, 2, 3;
       content: attr(data-text);
       color: #fff;
       opacity: 0;
-      animation: loading08-child 2s infinite;
+      animation: loading08-child 1s infinite;
     }
     @for $i from 1 through 6 {
       &:nth-child(#{$i + 1})::after {

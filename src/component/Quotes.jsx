@@ -1,6 +1,6 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
 
-const Quotes = ({ handleClick, quoteText, author }, ref) => {
+const Quotes = ({ handleClick, quoteText, author, isloading }, ref) => {
   const localRef = useRef();
   useImperativeHandle(ref, () => ({
     slideDown() {
@@ -9,7 +9,7 @@ const Quotes = ({ handleClick, quoteText, author }, ref) => {
   }));
   return (
     <div className="quotes-container">
-      <div className="quote-div" ref={localRef}>
+      <div className={`quote-div ${isloading ? "" : "hide"}`} ref={localRef}>
         <cite>
           <blockquote className="mt-2"> {quoteText}</blockquote>
         </cite>
