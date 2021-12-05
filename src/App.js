@@ -28,9 +28,7 @@ function App() {
   function handleClick() {
     dispatch({ type: "INCREAMENT" });
     dispatch({ type: "SET_QUOTES", payload: quote });
-    // animRef.current.slideDown();
     dispatch({ type: "LOAD_CHANGE" });
-    // animRef.current.hide();
   }
   return (
     <div className="App-container">
