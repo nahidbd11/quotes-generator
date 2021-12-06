@@ -3,6 +3,9 @@ import Quotes from "./component/Quotes";
 import React, { useReducer, useEffect, useRef } from "react";
 import useFetch from "./component/customHooks/CustomFetch";
 import reducer from "./reducer";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./component/Navbar";
+import About from "./component/About";
 
 function App() {
   const initialstate = {
@@ -31,30 +34,45 @@ function App() {
     dispatch({ type: "LOAD_CHANGE" });
   }
   return (
-    <div className="App-container">
-      {state.isloading && (
-        <h3>
-          Quotes for you is
-          <div className="loading loading08">
-            <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-          </div>
-        </h3>
-      )}
-      {!state.isloading && (
-        <Quotes
-          ref={animRef}
-          quoteText={state.quoteText}
-          author={state.author}
-          handleClick={handleClick}
-          isloading={state.isloading}
-        />
-      )}
+    <div>
+      <Navbar />
+      <div className="App-container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                {state.isloading && (
+                  <h3>
+                    Quotes for you is
+                    <div className="loading loading08">
+                      <span>L</span>
+                      <span>O</span>
+                      <span>A</span>
+                      <span>D</span>
+                      <span>I</span>
+                      <span>N</span>
+                      <span>G</span>
+                    </div>
+                  </h3>
+                )}
+                {!state.isloading && (
+                  <Quotes
+                    ref={animRef}
+                    quoteText={state.quoteText}
+                    author={state.author}
+                    handleClick={handleClick}
+                    isloading={state.isloading}
+                  />
+                )}
+              </div>
+            }
+          />
+          <Route path="/about" element={<About />}>
+            <Route path="bd" element={<div>bangladesh is my motherland</div>} />
+          </Route>
+        </Routes>
+      </div>
     </div>
   );
 }

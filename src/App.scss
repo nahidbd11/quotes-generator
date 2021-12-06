@@ -129,3 +129,26 @@ $margins: 1, 2, 3;
     opacity: 1;
   }
 }
+/*
+ TODO:styling navbar
+*/
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  li {
+    position: relative;
+    list-style-type: none;
+    padding: 2em;
+
+    .navlink {
+      text-decoration: none;
+      padding: 5px;
+      transition: all 0.25s ease-in;
+      &:hover {
+        background-color: rgb(22, 22, 19);
+        color: white;
+      }
+    }
+  }
+}
