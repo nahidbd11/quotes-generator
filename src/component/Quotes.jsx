@@ -9,7 +9,7 @@ const Quotes = ({ handleClick, quoteText, author, isloading }, ref) => {
   }));
   return (
     <div className="quotes-container">
-      <div className={`quote-div ${isloading ? "" : "hide"}`} ref={localRef}>
+      <div className={`quote-div ${isloading ? "" : ""}`} ref={localRef}>
         <cite>
           <blockquote className="mt-2"> {quoteText}</blockquote>
         </cite>

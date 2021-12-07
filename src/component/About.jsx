@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import imgsrc from "../assets/img/pp.jpg";
 const About = () => {
   const [isActive, setIsActive] = useState(false);
   const handleZoom = () => {
@@ -13,28 +14,32 @@ const About = () => {
   };
   const navigate = useNavigate();
   return (
-    <div className="about">
+    <div className="about-container">
       <CSSTransition
         in={isActive}
         timeout={500}
-        classNames="zoom"
-        exit={true}
+        classNames="test"
+        exit={false}
+        enter={true}
         onEntered={(props) => setIsActive(false)}
       >
         <div>
-          <p className="text-muted" style={{ ...styles }}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
-            temporibus!
-          </p>
-          <button className="btn btn-primary" onClick={() => navigate("/")}>
-            back to home
-          </button>
-
-          <Outlet />
+          <div className="text-container">
+            <p className="text-muted" style={{ ...styles }}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
+              temporibus!
+            </p>
+            <button className="btn btn-primary" onClick={() => navigate("/")}>
+              back to home
+            </button>
+            <Outlet />
+          </div>
+          <div className="img-container">
+            <img src={imgsrc} alt="demo" />
+          </div>
         </div>
       </CSSTransition>
       <br />
-
       <button onClick={handleZoom}>Zoom IN</button>
     </div>
   );

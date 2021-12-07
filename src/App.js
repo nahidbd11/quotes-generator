@@ -44,7 +44,7 @@ function App() {
           <CSSTransition
             exit={false}
             key={location.pathname}
-            timeout={5000}
+            timeout={500}
             mountOnEnter={true}
             unmountOnExit={true}
             classNames="test"

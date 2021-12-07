@@ -156,18 +156,18 @@ $margins: 1, 2, 3;
 /** testing csstransition group***/
 
 .test-enter {
-  transform: translateY(-100%);
+  transform: translateX(-100%);
 }
 .test-enter-active {
-  transform: translateY(0%);
-  transition: transform 5000ms;
+  transform: translateX(0%);
+  transition: transform 500ms;
 }
 .test-exit {
-  transform: translateY(0%);
+  transform: translateX(0%);
 }
 .test-exit-active {
-  transform: translateY(100%);
-  transition: transform 5000ms;
+  transform: translateX(100%);
+  transition: transform 500ms;
 }
 
 .zoom-enter {
@@ -183,4 +183,20 @@ $margins: 1, 2, 3;
 .zoom-exit-active {
   transform: translateX(0);
   transition: transform 500ms;
+}
+
+/***TODO: about page***/
+
+.about-container > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: normal;
+  gap: 5rem;
+}
+.img-container {
+  grid-area: 1/1/2/2;
+}
+.text-container {
+  grid-column: 2/3;
 }
