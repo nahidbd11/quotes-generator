@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import imgsrc from "../assets/img/pp.jpg";
+import imgsrc from "../assets/img/npp.jpeg";
 const About = () => {
   const [isActive, setIsActive] = useState(false);
-  const handleZoom = () => {
-    setIsActive(true);
-  };
   const styles = {
     color: "white",
     backgroundColor: "black",
@@ -27,7 +24,11 @@ const About = () => {
           <div className="text-container">
             <p className="text-muted" style={{ ...styles }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
-              temporibus!
+              temporibus! Lorem ipsum dolor, sit amet consectetur adipisicing
+              elit. Ratione, dolores. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Adipisci eligendi quaerat corporis hic dicta
+              voluptatem sequi in cumque. Eaque quos ex quam repellat a qui illo
+              repellendus harum, reprehenderit atque.
             </p>
             <button className="btn btn-primary" onClick={() => navigate("/")}>
               back to home
@@ -40,7 +41,6 @@ const About = () => {
         </div>
       </CSSTransition>
       <br />
-      <button onClick={handleZoom}>Zoom IN</button>
     </div>
   );
 };
