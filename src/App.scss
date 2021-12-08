@@ -208,6 +208,8 @@ $margins: 1, 2, 3;
 }
 .text-container {
   grid-column: 2/3;
+  font-size: clamp(0.5em, 0.8em, 1.5em);
+
 }
 
 @media screen and (max-width: 576px) {
@@ -220,8 +222,8 @@ $margins: 1, 2, 3;
   .img-container {
     grid-column: 1/2;
     img {
-      width: 280px;
-      height: 200px;
+      width: 200px;
+      height: 180px;
     }
   }
   .text-container {

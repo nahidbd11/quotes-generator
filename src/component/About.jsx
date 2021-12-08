@@ -29,7 +29,13 @@ const About = () => {
               adipisicing elit. Adipisci eligendi quaerat corporis hic dicta
               voluptatem sequi in cumque. Eaque quos ex quam repellat a qui illo
               repellendus harum, reprehenderit atque.
+              <cite>
+                <blockquote style={{ color: "yellow" }}>
+                  <b>email:</b>diegonahid@gmail.com
+                </blockquote>
+              </cite>
             </p>
+
             <button className="btn btn-primary" onClick={() => navigate("/")}>
               back to home
             </button>
